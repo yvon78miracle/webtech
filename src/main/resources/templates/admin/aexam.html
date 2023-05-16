@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>exam</title>
+  <link rel="stylesheet" th:href="@{exam.css}">
+  <style>
+   body{
+        background:url("https://www.insbright.com/wp-content/uploads/3205/keep-calm-and-study-hard-750x422.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 100%;
+        padding: 5em;
+        font-weight: bold;
+ }
+.center-content {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.exam-input {
+  margin-bottom: 10px;
+}
+
+.exam-button {
+  padding: 10px;
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.exam-button:hover {
+  background-color: #0069d9;
+}
+  </style>
+</head>
+<body>
+<center>
+  <form th:action="@{/saveexam}" method="post" class="center-content">
+    <h3>REGISTRATION</h3>
+    <input type="text" name="id" class="exam-input" placeholder="examId" /> <br/><br/>
+    <input type="text" name="examName" class="exam-input" placeholder="examName" /> <br/><br/>
+    <input type="text" name="tname" class="exam-input" placeholder="teacher'sName" /> <br/><br/>
+    <input type="text"  name="duration" class="exam-input" placeholder="duration" /> <br/><br/>
+    <input type="date" name="data" class="exam-input"/> <br/><br/>
+
+    <button type="Submit" class="exam-button" th:text="SAVE"></button> | <a th:href="@{|/dashboard|}" th:text="'dashboard'"></a><br />
+    </div>
+
+  </form>
+</center>
+
+</body>
+</html>

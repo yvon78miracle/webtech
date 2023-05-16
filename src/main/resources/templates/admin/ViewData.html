@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View Exam Registration</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<style>
+     body{
+        background:white;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 100%;
+        padding: 5em;
+        font-weight: bold;
+ }
+</style>
+</head>
+
+<body>
+<center>
+    <h1 >THE DETAILS OF THE EXAM THAT YOU ARE ALLOWED TO WORK ON </h1>
+    <p>
+        Welcome! We're glad you're here to find out more about the exam details.
+
+    <p>
+</center>
+
+
+<table class="table">
+    <thead class="thead-dark">
+    <tr>
+        <th>Exam Id</th>
+        <th>Date of Exam</th>
+        <th>Duration</th>
+        <th>Exam</th>
+        <th>Teacher's Name</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="ex : ${examList}">
+        <td th:text="${ex.examid}"></td>
+        <td th:text="${ex.dateOfexam}"></td>
+        <td th:text="${ex.duration}"></td>
+        <td th:text="${ex.examname}"></td>
+        <td th:text="${ex.teachersName}"></td>
+        <td>
+            <a class="btn btn-primary" th:href="@{/all/{exam}/delete(exam=${ex.examid})}">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<center>
+
+    for more information you can call us +250789020199 or visit us on email:yvon789020199@gmail.com
+</center>
+<p>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <title>User Dashboard</title>
+    <link rel="stylesheet" th:href="@{dashboard.css}">
+    <style>
+   body{
+        background:url("https://www.insbright.com/wp-content/uploads/3205/keep-calm-and-study-hard-750x422.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 100%;
+        padding: 5em;
+        font-weight: bold;
+ }
+.center-content {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.dashboard-link {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.dashboard-link a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.dashboard-link a:hover {
+  text-decoration: underline;
+}
+
+.dashboard-button {
+  padding: 10px;
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.dashboard-button:hover {
+  background-color: #0069d9;
+}
+
+    </style>
+</head>
+<body>
+<div class="center-content">
+    <h2>Welcome to Admin Dashboard</h2>
+    <p>Logged as: <span sec:authentication="name"></span></p>
+    <p>Has role: <span sec:authentication="authorities"></span></p>
+    <p class="dashboard-link"><a th:href="@{/}">Home</a></p>
+    <p class="dashboard-link"><a th:href="@{/logout}">Log out</a></p>
+    <p class="dashboard-link"><a th:href="@{/exam}">exam</a></p>
+    <button type="submit" class="dashboard-button" th:text="exam"></button> | <a th:href="@{|/exam|}" th:text="'exam'"></a>
+</div>
+</body>
+</html>

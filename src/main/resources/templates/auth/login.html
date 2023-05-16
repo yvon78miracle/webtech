@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" th:href="@{login.css}">
+    <style>
+    body{
+        background:url("https://www.insbright.com/wp-content/uploads/3205/keep-calm-and-study-hard-750x422.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 100%;
+        padding: 5em;
+        font-weight: bold;
+ }
+.form-signin {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.form-signin h3 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.form-signin input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-signin button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.form-signin button:hover {
+  background-color: #0069d9;
+}
+
+.form-signin a {
+  text-decoration: none;
+}
+
+.form-signin p {
+  margin-top: 10px;
+  color: red;
+}
+
+    </style>
+</head>
+<body class="body">
+<center>
+    <form th:action="@{/login}" method="POST" class="form-signin">
+        <h3 th:text="LOGIN"></h3>
+        <input type="text" name="email" th:placeholder="Email" /><br /><br />
+        <input type="password" name="password" th:placeholder="Password" /><br /><br />
+        <button type="submit" th:text="Login"></button> |
+        <a th:href="@{|/register|}" th:text="'Register'"></a><br />
+        <div th:if="${param.error}">
+            <p>Email or Password is invalid.</p>
+        </div><br />
+    </form>
+</center>
+</body>
+</html>
